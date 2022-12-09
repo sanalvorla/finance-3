@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  global { @apply p-0 m-0 }
+  html, body, main { @apply overflow-hidden h-screen w-screen p-0 m-0 }
+  main { @apply bg-slate-50 h-screen w-screen }
+  div { @apply overflow-hidden }
+}
+
+/*
+/*Start input tag config*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+/*End input tag config*/
+
+@layer components {
+	/* Buttons */
+  /* Primary */
+	.btn-primary { @apply h-base rounded-md bg-accent px-4 text-sm font-normal text-white w-fit }
+  .btn-primary-destructive { @apply btn-primary bg-destructive }
+	.btn-primary:disabled { @apply bg-slate-300 text-slate-500 }
+  .btn-primary-destructive:disabled { @apply btn-primary }
+
+  /* Secondary */
+	.btn-secondary { @apply h-base rounded-md bg-white border border-accent px-4 text-sm font-normal text-accent w-fit }
+  .btn-secondary-destructive { @apply btn-secondary border-destructive text-destructive }
+	.btn-secondary:disabled { @apply text-slate-500 border-slate-500 }
+  .btn-secondary-destructive:disabled { @apply btn-secondary }
+
+  /* Text button */
+	.btn-text { @apply text-sm font-normal text-link w-fit h-fit }
+  .btn-text:disabled { @apply text-slate-500 }
+	.btn-text-destructive { @apply btn-text text-destructive }
+  .btn-text-destructive:disabled { @apply text-slate-500  }
+
+  /* Text */
+  /* General Text */
+	.title { @apply flex h-base items-center justify-center w-fit text-slate-900 text-xl }
+  p { @apply text-sm font-normal text-black }
+
+  /* Labels */
+  .label-x { @apply flex gap-2 text-sm text-black items-center }
+	.label-top { @apply text-xs font-bold text-slate-500 uppercase flex flex-col text-left }
+  .label-bottom { @apply h-[1rem] normal-case text-xs font-normal text-slate-500 }
+  .label-bottom-destructive { @apply label-bottom text-destructive }
+
+  /* Inputs */
+	.input { @apply h-base text-sm bg-white font-normal text-black px-2 rounded-md border }
+	.input:disabled { @apply bg-transparent text-slate-500 }
+
+}
+
